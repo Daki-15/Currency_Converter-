@@ -28,11 +28,11 @@ from_variable = StringVar()
 to_variable = StringVar()
 
 # Create comboboxes for selecting the "From" and "To" currencies and set their positions
-from_menu = ttk.Combobox(window, values=["IND", "USD", "CAD", "CNY", "EUR", "GBP", "RSD"], width=10, textvariable=from_variable)
+from_menu = ttk.Combobox(window, values=["USD", "EUR", "GBP", "CHF", "CAD", "ZAR", "HKD"], width=10, textvariable=from_variable)
 from_menu.place(x=10, y=180)
 from_menu.current(0)
 
-to_menu = ttk.Combobox(window, values=["IND", "USD", "CAD", "CNY", "EUR", "GBP", "RSD"], width=10, textvariable=to_variable)
+to_menu = ttk.Combobox(window, values=["USD", "EUR", "GBP", "CHF", "CAD", "ZAR", "HKD"], width=10, textvariable=to_variable)
 to_menu.place(x=248, y=180)
 to_menu.current(0)
 
@@ -54,8 +54,8 @@ def convert():
         ans = curent.convert(from_currency, to_currency, float(amount_entry.get()))
         amount = float("{:.3f}".format(ans))
         txt.set(amount)
-        result_label = Label(window, textvariable=txt)
-        result_label.place(x=125, y=350)
+        result_label = Label(window, textvariable=txt, font=("Arial 20 bold"))
+        result_label.place(x=125, y=400)
     # If no amount was entered, display an error message
     else:
         txt.set("Please enter an amount")
