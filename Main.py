@@ -8,7 +8,7 @@ window = Tk()
 
 # Configure the window with a background color, size, and title
 window.config(bg="#242424")
-window.geometry("400x500")
+window.geometry("400x450")
 window.title("Currency Converter")
 
 # Create an image object and label for the program icon
